@@ -13,6 +13,10 @@ body {
 	background-color: black;
 }
 
+<<<<<<< HEAD
+li {
+	display: inline;
+=======
 #titlebar {
 	text-align: center;
 	width: 100%;
@@ -33,4 +37,5 @@ body {
 
 #msnStmt {
 	width: 400px;
+>>>>>>> 76a838d83b058fd191ac5b5c9c72a25459f6026c
 }
