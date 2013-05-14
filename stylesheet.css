@@ -7,9 +7,22 @@ body {
 	background-color: RGB(240,240,240);
 }
 
-#menubar{
+#menubar {
 	height: 40px;
 	width: 100%;
 	background-color: black;
 }
 
+#titlebar {
+	text-align: center;
+	width: 100%;
+	height: 200px;
+}
+
+#title {
+
+}
+
+#msnStmt {
+	width: 400px;
+}
