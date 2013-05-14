@@ -15,8 +15,16 @@ body {
 
 
 li {
-	display: inline;
+	float: left;
 }
+
+a:link, a:visited {
+	display: block;
+	width: 120px;
+	color: #FFFFFF;
+	background-color: #0000FF;
+}
+
 #titlebar {
 	
 	height: 200px;
