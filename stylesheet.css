@@ -18,6 +18,7 @@ body {
 }
 
 ul.nav {
+	padding-left: 20%;
 	list-style-type: none;
 	overflow: hidden;
 }
