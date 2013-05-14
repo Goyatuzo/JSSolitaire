@@ -13,6 +13,10 @@ body {
 	background-color: black;
 }
 
+#nav-wrapper {
+	margin-left: 20%;
+}
+
 ul.nav {
 	list-style-type: none;
 	overflow: hidden;
@@ -26,7 +30,7 @@ ul.nav li a:link, ul.nav li a:visited {
 	display: block;
 	width: 120px;
 	color: #FFFFFF;
-	background-color: #0000FF;
+	background-color: #7DC9E2;
 	height: 40px;
 	text-align: center;
 	text-decoration: none;
@@ -53,17 +57,17 @@ ul.nav li a:hover, ul.nav li a:active {
 	text-shadow: 2px 1px black;
 }
 
-#petg {
+#soli {
 	font-family: 'Chela One';
 	float: left;
-	color: green;
+	color: #FF9900;
 	padding-right: 5px;
 	
 }
 
-#ingers {
+#taire {
 	font-family: 'Merienda One';	
-	color: orange;
+	color: #FFCC00;
 }
 
 #msnStmt {
@@ -80,4 +84,5 @@ ul.nav li a:hover, ul.nav li a:active {
 	margin: auto;	
 	font-style: italic;
 	line-height: 150%;
+	font-size: 16px;
 }
