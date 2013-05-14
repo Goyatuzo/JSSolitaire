@@ -80,12 +80,19 @@ ul.nav li a:hover, ul.nav li a:active {
 }
 
 #gameboard {
-	width: 1000;
-	height: 800;
+	width: 60%;
+	height: 60%;
 	margin: auto;	
-	font-style: italic;
-	line-height: 150%;
-	font-size: 16px;
+	position: absolute;
+	margin-left: 20%;
+	border: 2px solid #ddd;
+	background-color: purple;	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 10px 0px #eee;
+	-moz-box-shadow: 0px 0px 10px 0px #eee;
+	box-shadow: 0px 0px 10px 0px #eee;
 }
 
 .sample-card-design {
@@ -105,8 +112,8 @@ ul.nav li a:hover, ul.nav li a:active {
 }
 
 .cardbackground {
-	height: 300px;
-	width: 200px;
+	height: 150px;
+	width: 100px;
 	border: 2px solid #ddd;
 	position: absolute;
 	background-color: white;	
@@ -120,7 +127,7 @@ ul.nav li a:hover, ul.nav li a:active {
 
 .cardIdentifier {
 	position: absolute;
-	top: 40%;
+	top: 20%;
 	left: 32%;	
 }
 
