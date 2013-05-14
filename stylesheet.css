@@ -13,6 +13,10 @@ body {
 	background-color: black;
 }
 
+ul {
+	list-style-type: none;
+	overflow: hidden;
+}
 
 li {
 	float: left;
@@ -23,10 +27,17 @@ a:link, a:visited {
 	width: 120px;
 	color: #FFFFFF;
 	background-color: #0000FF;
+	height: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	background-color: #CCEEFF;
+	color: #000000;
 }
 
 #titlebar {
-	
 	height: 200px;
 }
 
@@ -43,9 +54,7 @@ a:link, a:visited {
 }
 
 #ingers {
-	font-family: 'Merienda One';
-
-	
+	font-family: 'Merienda One';	
 }
 
 #msnStmt {
