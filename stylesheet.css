@@ -13,16 +13,16 @@ body {
 	background-color: black;
 }
 
-ul {
+ul.nav {
 	list-style-type: none;
 	overflow: hidden;
 }
 
-li {
+ul.nav li {
 	float: left;
 }
 
-a:link, a:visited {
+ul.nav li a:link, ul.nav li a:visited {
 	display: block;
 	width: 120px;
 	color: #FFFFFF;
@@ -32,7 +32,7 @@ a:link, a:visited {
 	text-decoration: none;
 }
 
-a:hover, a:active {
+ul.nav li a:hover, ul.nav li a:active {
 	background-color: #CCEEFF;
 	color: #000000;
 }
