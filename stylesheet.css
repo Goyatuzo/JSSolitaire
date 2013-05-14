@@ -39,6 +39,7 @@ a:hover, a:active {
 
 #titlebar {
 	height: 200px;
+	width: auto;
 }
 
 #title {
@@ -46,6 +47,7 @@ a:hover, a:active {
 	margin-top: 40px;
 	width: 400px;
 	font-size: 30px;
+	float: center;
 }
 
 #petg {
@@ -58,6 +60,6 @@ a:hover, a:active {
 }
 
 #msnStmt {
-	width: 400px;
+	width: 300px;
 	float: right;
 }
