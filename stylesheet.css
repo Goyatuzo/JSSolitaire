@@ -13,3 +13,6 @@ body {
 	background-color: black;
 }
 
+li {
+	display: inline;
+}
