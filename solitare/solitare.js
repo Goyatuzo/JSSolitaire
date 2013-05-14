@@ -17,31 +17,29 @@ function init()
 
 	// Create the hearts.
 	for( var i = 1; i < 14; i++ )
-		theDeck[ 13 + i ] = new Card( i, "Heart" );
+		theDeck[ 12 + i ] = new Card( i, "Heart" );
 
 	// Create the clubs.
 	for( var i = 1; i < 14; i++ )
-		theDeck[ 26 + i ] = new Card( i , "Club" );
+		theDeck[ 25 + i ] = new Card( i , "Club" );
 
 	// Create the hearts.
 	for( var i = 1; i < 14; i++ )
-		theDeck[ 39 + i ] = new Card( i, "Diamond" );
+		theDeck[ 38 + i ] = new Card( i, "Diamond" );
 
-	// Randomize the deck.
+	/**
+	 * Randomize the deck by essentially swapping the deck N number
+	 * of times.  Figured it was more efficient.
+	 */
 	for( var i = 0; i < 52; i++ )
-		swap( theDeck[ Math.floor( Math.random() * 53 ) ],
-				theDeck[ Math.floor( Math.random() * 53 ) ] );
-}
+	{
+		// Because javascript has no pass by reference.
+		var idxOne = Math.floor( Math.random() * 53 );
+		var idxTwo = Math.floor( Math.random() * 53 );
 
-function swap( a, b )
-{
-	var temp = a;
+		var temp = theDeck[ idxOne ];
 
-	a = b;
-	b = temp;
-}
-
-function drag()
-{
-
+		theDeck[ idxOne ] = theDeck[ idxTwo ];
+		theDeck[ idxTwo ] = temp;		
+	}
 }
