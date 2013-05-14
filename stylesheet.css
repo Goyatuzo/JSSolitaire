@@ -88,8 +88,8 @@ ul.nav li a:hover, ul.nav li a:active {
 	font-size: 16px;
 }
 
-#sample-card-design {
-	margin: auto;
+.sample-card-design {
+	margin-left: 20%;
 	height: 300px;
 	width: 200px;
 	border: 2px solid #ddd;
@@ -98,24 +98,31 @@ ul.nav li a:hover, ul.nav li a:active {
 	font-family: 'Kavoon';
 	font-style: normal;
 	color: #232B2B;
-	font-size: 120px;
+	font-size: 400%;
 	text-align: center;
 	#232B2B
 	#FFFFFF
 	#E3AE57
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 	-webkit-box-shadow: 0px 0px 10px 0px #eee;
 	-moz-box-shadow: 0px 0px 10px 0px #eee;
 	box-shadow: 0px 0px 10px 0px #eee;
+	z-index: 10;
+}
+
+.cardIdentifier {
+	position: absolute;
+	top: 40%;
+	left: 32%;	
 }
 
 .diamond {
-	width:35px;
-    height:35px;
+	width:17.5%;
+    height:11.6667%;
    	border: 1px solid #ddd;
-    background:#DC3D24;
+    background-color:#DC3D24;
     position: absolute;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
@@ -130,4 +137,46 @@ ul.nav li a:hover, ul.nav li a:active {
     -webkit-box-shadow: 0px 0px 10px 0px #eee;
 	-moz-box-shadow: 0px 0px 10px 0px #eee;
 	box-shadow: 0px 0px 10px 0px #eee;
+}
+
+.heart {
+ position: absolute;
+ width: 100px;
+ height: 90px;
+}
+
+.heart:before, .heart:after {
+ position: absolute;
+ content: "";
+ left: 50px;
+ top: 0;
+ width: 50px;
+ height: 80px;
+ background-color: #DC3D24;
+ -moz-border-radius: 50px 50px 0 0;
+ border-radius: 50px 50px 0 0;
+ -webkit-transform: rotate(-45deg);
+ -moz-transform: rotate(-45deg);
+ -ms-transform: rotate(-45deg);
+ -o-transform: rotate(-45deg);
+ transform: rotate(-45deg);
+ -webkit-transform-origin: 0 100%;
+ -moz-transform-origin: 0 100%;
+ -ms-transform-origin: 0 100%;
+ -o-transform-origin: 0 100%;
+ transform-origin: 0 100%;
+}
+
+.heart:after {
+ left: 0;
+ -webkit-transform: rotate(45deg);
+ -moz-transform: rotate(45deg);
+ -ms-transform: rotate(45deg);
+ -o-transform: rotate(45deg);
+ transform: rotate(45deg);
+ -webkit-transform-origin: 100% 100%;
+ -moz-transform-origin: 100% 100%;
+ -ms-transform-origin: 100% 100%;
+ -o-transform-origin: 100% 100%;
+ transform-origin :100% 100%;
 }
