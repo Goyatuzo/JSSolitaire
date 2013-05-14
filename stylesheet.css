@@ -99,7 +99,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	margin-left: 20%;
 	
 	background-color: #FFFFF;
-	position: relative;
+	position: absolute;
 	font-family: 'Kavoon';
 	font-style: normal;
 	color: #232B2B;
@@ -115,7 +115,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	height: 150px;
 	width: 100px;
 	border: 2px solid #ddd;
-	position: absolute;
+	position: relative;
 	background-color: white;	
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
