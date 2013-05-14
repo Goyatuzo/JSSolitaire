@@ -3,8 +3,13 @@
 	padding: 0px;
 }
 
-#poop{
+body {
+	background-color: RGB(240,240,240);
+}
+
+#menubar{
 	height: 40px;
 	width: 100%;
 	background-color: black;
 }
+
