@@ -43,23 +43,31 @@ a:hover, a:active {
 }
 
 #title {
-	margin-left: 45%;
+	margin-left: 20%;
 	margin-top: 40px;
 	width: 400px;
-	font-size: 30px;
-	float: center;
+	font-size: 60px;
+	font-style: italic;
+	float: left;
 }
 
 #petg {
 	font-family: 'Chela One';
 	float: left;
+	color: green;
+	
 }
 
 #ingers {
 	font-family: 'Merienda One';	
+	color: orange;
 }
 
 #msnStmt {
-	width: 300px;
+	width: 400px;
 	float: right;
+	margin-right: 20%;
+	font-size: 25px;
+	font-style: italic;
+	margin-top: 40px;
 }
