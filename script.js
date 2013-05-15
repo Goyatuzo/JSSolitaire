@@ -7,15 +7,15 @@ $(document).ready(function(){
 
 	function isOpposingColors( cardOne, cardTwo )
 	{
-		var oneRank = cardOne.rank;
-		var twoRank = cardTwo.rank;
+		var oneSuit = cardOne.suit;
+		var twoSuit = cardTwo.suit;
 
-		// If the first rank is "black", return whether or not the other is "red"
-		if( oneRank == "spade" || oneRank == "club" )
-			return ( twoRank == "heart" || twoRank == "diamond" );
-		// If the first rank is "red", return whether or not the other is "black"
-		else if( oneRank == "heart" || oneRank == "diamon" )
-			return ( twoRank == "spade" || twoRank == "club" );
+		// If the first suit is "black", return whether or not the other is "red"
+		if( oneSuit == "spade" || oneSuit == "club" )
+			return ( twoSuit == "heart" || twoSuit == "diamond" );
+		// If the first suit is "red", return whether or not the other is "black"
+		else if( oneSuit == "heart" || oneSuit == "diamon" )
+			return ( twoSuit == "spade" || twoSuit == "club" );
 		// If anything else is happening, oh no.  Problem.
 		else
 			return false;

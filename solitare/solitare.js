@@ -1,11 +1,37 @@
-// The card class.
+/**
+ * The card class.
+ */
 function Card( rank, suit )
 {
 	this.rank = rank;
 	this.suit = suit;
 	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + suit + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + rank + '</div> <div class="' + suit + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
+	this.id = -1;
 }
 
+/**
+ * Provides the same functionality as "isOpposingColors" in script.js, but this is a method in the object
+ * as opposed to a general function.
+ */
+Card.prototype.isOpposingColors = function( other )
+{
+		var oneSuit = this.suit;
+		var twoSuit = other.suit;
+
+		// If the first suit is "black", return whether or not the other is "red"
+		if( oneSuit == "spade" || oneSuit == "club" )
+			return ( twoSuit == "heart" || twoSuit == "diamond" );
+		// If the first suit is "red", return whether or not the other is "black"
+		else if( oneSuit == "heart" || oneSuit == "diamon" )
+			return ( twoSuit == "spade" || twoSuit == "club" );
+		// If anything else is happening, oh no.  Problem.
+		else
+			return false;
+}
+
+/**
+ * The deck of cards, will hold 52 cards.
+ */
 var theDeck;
 
 ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
