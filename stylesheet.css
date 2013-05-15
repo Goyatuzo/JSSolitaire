@@ -107,6 +107,8 @@ ul.nav li a:hover, ul.nav li a:active {
 	#FFFFFF
 	#E3AE57
 	z-index: 10;
+	transform-style: preserve-3d;
+	transition: all 1.0s linear;
 }
 
 .cardbackground {

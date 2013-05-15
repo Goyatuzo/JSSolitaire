@@ -129,3 +129,7 @@ function dropHandler(ev, ui) {
 
 	
 }
+
+/*function flip(card) {
+
+}*/
