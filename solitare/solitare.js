@@ -41,23 +41,19 @@ Card.prototype.isDescending = function( other )
 	var oneRank = this.obj.data().rank;
 	var twoRank = other.obj.data().rank;
 
-	// Start with 2 check so that the next elseif statement becomes more streamlined.
-	if( oneRank === 2 )
-		return ( twoRank === 'A' );
-	// If "this" contains a numerical Rank, check to see if it's larger than other.
-	else if( typeof oneRank === "number" && Math.floor( oneRank ) === oneRank )
-		// Using "===" should check to see whether or not the type is the same, thus eliminates J, Q, K
-		return ( twoRank === oneRank - 1 );
-	// Rank checking for non-numericals.
-	else if( oneRank === 'J' )
-		return twoRank === 10;
-	else if( oneRank === 'Q' )
-		return twoRank === 'J';
-	else if( oneRank === 'K' )
-		return twoRank === 'Q';
-	// If there are other Ranks, why did it happen?
-	else
-		return false;
+	var i;
+	var j;
+	var count = 0;
+	while ( count < ranks.length )
+	{
+		if( oneRank === ranks[ count ] )
+			i = count;
+		if( twoRank === ranks[ count ] )
+			j = count;
+		count++;
+	}
+
+	return twoRank == oneRank - 1;
 }
 
 /**
