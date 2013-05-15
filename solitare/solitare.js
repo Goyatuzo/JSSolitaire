@@ -114,7 +114,7 @@ $(document).ready(function() {
   }
 });
 
-function dropHandler() {
+function dropHandler(ev, ui) {
 	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
 }
 
