@@ -1,4 +1,12 @@
 /**
+ * The deck of cards, will hold 52 cards.
+ */
+var theDeck;
+var numCards = 0;
+
+ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+
+/**
  * The card class.
  */
 function Card( r, s )
@@ -8,6 +16,8 @@ function Card( r, s )
 		rank: r,
 		suit: s
 	});
+
+	this.id = numCards++;
 	//console.log(this.obj.data("rank"));
 }
 
@@ -48,13 +58,6 @@ Card.prototype.isDescending = function( other )
 
 	return false;
 }
-
-/**
- * The deck of cards, will hold 52 cards.
- */
-var theDeck;
-
-ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 
 function init()
 {
@@ -116,5 +119,6 @@ $(document).ready(function() {
 });
 
 function dropHandler(ev, ui) {
-	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+	if( $(this.isDescending( ui.draggable ) ) )
+		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
 }
