@@ -10,7 +10,7 @@ body {
 #menubar {
 	height: 40px;
 	width: 100%;
-	background-color: black;
+	background-color: #232B2B;
 }
 
 #nav-wrapper {
@@ -76,7 +76,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	margin-right: 20%;
 	font-size: 25px;
 	font-style: italic;
-	margin-top: 40px;
+	margin-top: 60px;
 }
 
 #gameboard {
@@ -86,7 +86,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	position: absolute;
 	margin-left: 20%;
 	border: 2px solid #ddd;
-	background-color: purple;	
+	background-color:  #9842E3;	
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
@@ -96,14 +96,12 @@ ul.nav li a:hover, ul.nav li a:active {
 }
 
 .sample-card-design {
-	margin-left: 20%;
-	
 	background-color: #FFFFF;
 	position: absolute;
 	font-family: 'Kavoon';
 	font-style: normal;
 	color: #232B2B;
-	font-size: 400%;
+	
 	text-align: center;
 	#232B2B
 	#FFFFFF
@@ -128,7 +126,8 @@ ul.nav li a:hover, ul.nav li a:active {
 .cardIdentifier {
 	position: absolute;
 	top: 20%;
-	left: 32%;	
+	left: 32%;
+	font-size: 400%;	
 }
 
 .diamond {
