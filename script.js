@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$('.stackContainer').droppable({
+	$('.stackArea').droppable({
 		accept: '.sample-card-design',
 		drop: cardHandler
 	});
@@ -24,7 +24,7 @@ $(document).ready(function(){
 	// This function handles what cards can be stacked ontop of each other.
 	function cardHandler(ev, ui) {
 			//if(  )
-       			$(ui.draggable).css({top: 30,left: 10}).appendTo(this);
+       			$(ui.draggable).css({top: 0,left: 0}).appendTo(this);
    	}
     
 });

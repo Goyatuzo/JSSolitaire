@@ -257,3 +257,14 @@ ul.nav li a:hover, ul.nav li a:active {
 	height: 100%;
 	border-left: 1px solid #232B2B;
 }
+
+.stackArea {
+	margin: 0 auto;
+
+	margin-top: 5%;
+
+	height: 150px;
+	width: 100px;
+
+	position: relative;
+}

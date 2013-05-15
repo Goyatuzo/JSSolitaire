@@ -1,4 +1,12 @@
 /**
+ * The deck of cards, will hold 52 cards.
+ */
+var theDeck;
+var numCards = 0;
+
+ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+
+/**
  * The card class.
  */
 function Card( r, s )
@@ -8,6 +16,8 @@ function Card( r, s )
 		rank: r,
 		suit: s
 	});
+
+	this.id = numCards++;
 	//console.log(this.obj.data("rank"));
 }
 
@@ -41,22 +51,11 @@ function isDescending(topCard, bottomCard)
 	var topRank = topCard.data().rank;
 	var bottomRank = bottomCard.data().rank;
 	
-	for (var i = 0; i < ranks.length - 1; i++) {
-		if ((topRank == ranks[i]) && (bottomRank == ranks[i+1])) {
-			console.log("true");
+	for (var i = 0; i < ranks.length - 1; i++)
+		if ((topRank == ranks[i]) && (bottomRank == ranks[i+1]))
 			return true;
-		}
-	}
-	console.log("false");
 	return false;
 }
-
-/**
- * The deck of cards, will hold 52 cards.
- */
-var theDeck;
-
-ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 
 function init()
 {
@@ -119,15 +118,11 @@ $(document).ready(function() {
 
 function dropHandler(ev, ui) {
 	//$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
-	console.log($(this).data("rank"));
-	console.log(ui.draggable.data("rank"));
 	//if card dropped is valid, this attach it to stack
 	if (isDescending(ui.draggable, $(this)) ) {
 		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
 		$(this).droppable( 'disable' );
 	}
-
-	
 }
 
 /*function flip(card) {
