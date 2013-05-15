@@ -132,3 +132,7 @@ function dropHandler(ev, ui) {
 		$(this).droppable( 'disable' );
 	}
 }
+
+/*function flip(card) {
+
+}*/
