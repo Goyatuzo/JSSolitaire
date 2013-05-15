@@ -41,19 +41,10 @@ Card.prototype.isDescending = function( other )
 	var oneRank = this.obj.data().rank;
 	var twoRank = other.obj.data().rank;
 
-	var i;
-	var j;
-	var count = 0;
-	while ( count < ranks.length )
-	{
-		if( oneRank === ranks[ count ] )
-			i = count;
-		if( twoRank === ranks[ count ] )
-			j = count;
-		count++;
+	for (var i = 0; i < ranks.length - 1; i++) {
+		if ((oneRank === ranks[i]) && (twoRank === ranks[i+1])
+			return true;
 	}
-
-	return twoRank == oneRank - 1;
 }
 
 /**
