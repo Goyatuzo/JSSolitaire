@@ -14,11 +14,21 @@ function Card( r, s )
 	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
 	this.obj.data({
 		rank: r,
-		suit: s
+		suit: s,
+		index: 0
 	});
 
 	this.id = numCards++;
 	//console.log(this.obj.data("rank"));
+}
+
+function cardClick( e )
+{
+	// Obtain the card's properties.
+	var target = ( e.target ) ? e.target : e.srcElement;
+
+	// Change the index. 
+	target.obj.data().index = 15;
 }
 
 /**
@@ -92,8 +102,6 @@ function init()
 		theDeck[ idxOne ] = theDeck[ idxTwo ];
 		theDeck[ idxTwo ] = temp;		
 	}
-
-
 }
 
 $(document).ready(function() {
