@@ -38,24 +38,24 @@ Card.prototype.isOpposingColors = function( other )
  */
 Card.prototype.isDescending = function( other )
 {
-	var oneValue = this.obj.data().rank;
-	var twoValue = other.obj.data().rank;
+	var oneRank = this.obj.data().rank;
+	var twoRank = other.obj.data().rank;
 
 	// Start with 2 check so that the next elseif statement becomes more streamlined.
-	if( oneValue === 2 )
-		return ( twoValue === 'A' );
-	// If "this" contains a numerical value, check to see if it's larger than other.
-	else if( typeof oneValue === "number" && Math.floor( oneValue ) === oneValue )
+	if( oneRank === 2 )
+		return ( twoRank === 'A' );
+	// If "this" contains a numerical Rank, check to see if it's larger than other.
+	else if( typeof oneRank === "number" && Math.floor( oneRank ) === oneRank )
 		// Using "===" should check to see whether or not the type is the same, thus eliminates J, Q, K
-		return ( twoValue === oneValue - 1 );
+		return ( twoRank === oneRank - 1 );
 	// Rank checking for non-numericals.
-	else if( oneValue === 'J' )
-		return twoValue === 10;
-	else if( oneValue === 'Q' )
-		return twoValue === 'J';
-	else if( onevalue === 'K' )
-		return twoValue === 'Q';
-	// If there are other values, why did it happen?
+	else if( oneRank === 'J' )
+		return twoRank === 10;
+	else if( oneRank === 'Q' )
+		return twoRank === 'J';
+	else if( oneRank === 'K' )
+		return twoRank === 'Q';
+	// If there are other Ranks, why did it happen?
 	else
 		return false;
 }
