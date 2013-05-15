@@ -3,6 +3,7 @@ function Card( rank, suit )
 {
 	this.rank = rank;
 	this.suit = suit;
+	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + suit + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + rank + '</div> <div class="' + suit + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
 }
 
 var theDeck;
@@ -45,18 +46,12 @@ function init()
 		theDeck[ idxTwo ] = temp;		
 	}
 }
-
-function makeCard(Card) {
-	
-	
-	return $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + Card.suit + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + Card.rank + '</div> <div class="' + Card.suit + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
-}
  
 
 $(document).ready(function() {
 	init();
   for ( var i=0; i<theDeck.length; i++ ) {
-	  makeCard(theDeck[i]).appendTo('#gameboard').draggable( {
+	  theDeck[i].obj.appendTo('#gameboard').draggable( {
       containment: '#gameboard',
   	}).droppable({
 		accept: '.sample-card-design',
