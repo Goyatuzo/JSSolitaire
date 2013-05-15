@@ -198,7 +198,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	height: 50%;
 }
 
-.stack {
+.stackContainer {
 	display: inline-block;
 	width: 13.6%;
 	height: 100%;
