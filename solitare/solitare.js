@@ -101,6 +101,7 @@ $(document).ready(function() {
   for ( var i=0; i<theDeck.length; i++ ) {
 	  theDeck[ i ].obj.appendTo('#gameboard').draggable( {
       containment: '#gameboard',
+      revert: 'invalid'
   	}).droppable({
 		accept: '.sample-card-design',
     	drop: dropHandler,
@@ -109,8 +110,7 @@ $(document).ready(function() {
     	//},
     	greedy: true,
     	out: function(ev, ui) {
-	    	//$(ui.draggable).clone().appendTo('#gameboard');
-	    	//$(ui.draggable).clone().appendTo('#gameboard').draggable();
+	    	//$(this).droppable("enable");
 		}
 	});
   }
