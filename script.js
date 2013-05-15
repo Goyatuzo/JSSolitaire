@@ -5,6 +5,7 @@ $(document).ready(function(){
 		drop: cardHandler
 	});
 	
+	// This function handles what cards can be stacked ontop of each other.
 	function cardHandler(ev, ui) {
        		$(ui.draggable).css({top: 30,left: 10}).appendTo(this);
    	}

@@ -50,19 +50,11 @@ function init()
 		theDeck[ idxTwo ] = temp;		
 	}
 }
-<<<<<<< HEAD
- 
-=======
->>>>>>> 765f6f0d26381603f9fbac052118a68fee3024f9
 
 $(document).ready(function() {
 	init();
   for ( var i=0; i<theDeck.length; i++ ) {
-<<<<<<< HEAD
-	  theDeck[i].obj.appendTo('#gameboard').draggable( {
-=======
 	  theDeck[ i ].obj.appendTo('#gameboard').draggable( {
->>>>>>> 765f6f0d26381603f9fbac052118a68fee3024f9
       containment: '#gameboard',
   	}).droppable({
 		accept: '.sample-card-design',
