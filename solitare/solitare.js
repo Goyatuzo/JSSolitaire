@@ -1,12 +1,14 @@
 /**
  * The card class.
  */
-function Card( rank, suit )
+function Card( r, s )
 {
-	this.rank = rank;
-	this.suit = suit;
-	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + suit + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + rank + '</div> <div class="' + suit + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
-	this.id = -1;
+	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
+	this.obj.data({
+		rank: r,
+		suit: s
+	});
+	//console.log(this.obj.data("rank"));
 }
 
 /**
@@ -15,7 +17,7 @@ function Card( rank, suit )
  */
 Card.prototype.isOpposingColors = function( other )
 {
-		var oneSuit = this.suit;
+		var oneSuit = this.obj.data().suit;
 		var twoSuit = other.suit;
 
 		// If the first suit is "black", return whether or not the other is "red"
@@ -80,8 +82,10 @@ $(document).ready(function() {
       containment: '#gameboard',
   	}).droppable({
 		accept: '.sample-card-design',
-    	drop: function(ev, ui) {
-       		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+    	drop: dropHandler
+
+    	//		function(ev, ui) {
+       	//	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
     	},
     	greedy: true,
     	out: function(ev, ui) {
@@ -91,4 +95,8 @@ $(document).ready(function() {
 	});
   }
 });
+
+function dropHandler() {
+	
+}
 

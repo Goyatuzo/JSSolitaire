@@ -23,7 +23,7 @@ $(document).ready(function(){
 	
 	// This function handles what cards can be stacked ontop of each other.
 	function cardHandler(ev, ui) {
-			if(  )
+			//if(  )
        			$(ui.draggable).css({top: 30,left: 10}).appendTo(this);
    	}
     
