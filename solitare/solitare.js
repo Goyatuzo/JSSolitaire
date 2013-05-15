@@ -51,13 +51,9 @@ function isDescending(topCard, bottomCard)
 	var topRank = topCard.data().rank;
 	var bottomRank = bottomCard.data().rank;
 	
-	for (var i = 0; i < ranks.length - 1; i++) {
-		if ((topRank == ranks[i]) && (bottomRank == ranks[i+1])) {
-			console.log("true");
+	for (var i = 0; i < ranks.length - 1; i++)
+		if ((topRank == ranks[i]) && (bottomRank == ranks[i+1]))
 			return true;
-		}
-	}
-	console.log("false");
 	return false;
 }
 
@@ -122,8 +118,6 @@ $(document).ready(function() {
 
 function dropHandler(ev, ui) {
 	//$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
-	console.log($(this).data("rank"));
-	console.log(ui.draggable.data("rank"));
 	//if card dropped is valid, this attach it to stack
 	if (isDescending(ui.draggable, $(this)) ) {
 		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
