@@ -36,16 +36,18 @@ Card.prototype.isOpposingColors = function( other )
  * "this" refers to the card being stacked on, while "other" refers to the card
  * stacking on top of "this".  So "other" must be a smaller value than "this".
  */
-Card.prototype.isDescending = function( other )
+function isDescending(topCard, bottomCard)
 {
-	var oneRank = other.obj.data().rank;
-	var twoRank = this.obj.data().rank;
-
+	var topRank = topCard.data().rank;
+	var bottomRank = bottomCard.data().rank;
+	
 	for (var i = 0; i < ranks.length - 1; i++) {
-		if ((oneRank === ranks[i]) && (twoRank === ranks[i+1]))
+		if ((topRank == ranks[i]) && (bottomRank == ranks[i+1])) {
+			console.log("true");
 			return true;
+		}
 	}
-
+	console.log("false");
 	return false;
 }
 
@@ -116,5 +118,14 @@ $(document).ready(function() {
 });
 
 function dropHandler(ev, ui) {
-	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+	//$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+	console.log($(this).data("rank"));
+	console.log(ui.draggable.data("rank"));
+	//if card dropped is valid, this attach it to stack
+	if (isDescending(ui.draggable, $(this)) ) {
+		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+		$(this).droppable( 'disable' );
+	}
+
+	
 }
