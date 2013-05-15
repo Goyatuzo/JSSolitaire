@@ -42,7 +42,7 @@ Card.prototype.isDescending = function( other )
 	var twoRank = this.obj.data().rank;
 
 	for (var i = 0; i < ranks.length - 1; i++) {
-		if ( (oneRank === ranks[i]) && (twoRank === ranks[i+1]) )
+		if ((oneRank === ranks[i]) && (twoRank === ranks[i+1]))
 			return true;
 	}
 
@@ -102,9 +102,10 @@ $(document).ready(function() {
       containment: '#gameboard',
   	}).droppable({
 		accept: '.sample-card-design',
-    	drop: function(ev, ui) {
-       		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
-    	},
+    	drop: dropHandler,
+    	//		function(ev, ui) {
+       	//	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+    	//},
     	greedy: true,
     	out: function(ev, ui) {
 	    	//$(ui.draggable).clone().appendTo('#gameboard');
@@ -114,4 +115,6 @@ $(document).ready(function() {
   }
 });
 
-
+function dropHandler() {
+	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+}
