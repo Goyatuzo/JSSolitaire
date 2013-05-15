@@ -1,0 +1,12 @@
+TODO:
+
+FUNCTIONALITY:
+- Create CSS "suit" images.  ie Hearts, Spades, Clubs.
+- Implement "stacking" of cards.: snapping
+	- Then implement restrict stacking accordingly.
+- Get cards from deck of cards.
+- Be able to move multiple cards ie 10, 9, 8 ,7 etc when stacked.
+
+GAME RULES:
+- Create the "win" state
+- Add timer
