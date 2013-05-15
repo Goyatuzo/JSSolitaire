@@ -18,7 +18,7 @@ function Card( r, s )
 Card.prototype.isOpposingColors = function( other )
 {
 		var oneSuit = this.obj.data().suit;
-		var twoSuit = other.suit;
+		var twoSuit = other.obj.data().suit;
 
 		// If the first suit is "black", return whether or not the other is "red"
 		if( oneSuit == "spade" || oneSuit == "club" )
@@ -29,6 +29,35 @@ Card.prototype.isOpposingColors = function( other )
 		// If anything else is happening, oh no.  Problem.
 		else
 			return false;
+}
+
+/**
+ * Checks to see whether or not the second card has a smaller value than the first.
+ * "this" refers to the card being stacked on, while "other" refers to the card
+ * stacking on top of "this".  So "other" must be a smaller value than "this".
+ */
+Card.prototype.isDescending = function( other )
+{
+	var oneValue = this.obj.data().rank;
+	var twoValue = other.obj.data().rank;
+
+	// Start with 2 check so that the next elseif statement becomes more streamlined.
+	if( oneValue === 2 )
+		return ( twoValue === 'A' );
+	// If "this" contains a numerical value, check to see if it's larger than other.
+	else if( typeof oneValue === "number" && Math.floor( oneValue ) === oneValue )
+		// Using "===" should check to see whether or not the type is the same, thus eliminates J, Q, K
+		return ( twoValue === oneValue - 1 );
+	// Rank checking for non-numericals.
+	else if( oneValue === 'J' )
+		return twoValue === 10;
+	else if( oneValue === 'Q' )
+		return twoValue === 'J';
+	else if( onevalue === 'K' )
+		return twoValue === 'Q';
+	// If there are other values, why did it happen?
+	else
+		return false;
 }
 
 /**
