@@ -98,6 +98,8 @@ function init()
 		theDeck[ idxOne ] = theDeck[ idxTwo ];
 		theDeck[ idxTwo ] = temp;		
 	}
+
+
 }
 
 $(document).ready(function() {
@@ -107,10 +109,8 @@ $(document).ready(function() {
       containment: '#gameboard',
   	}).droppable({
 		accept: '.sample-card-design',
-    	drop: dropHandler
-
-    	//		function(ev, ui) {
-       	//	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
+    	drop: function(ev, ui) {
+       		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
     	},
     	greedy: true,
     	out: function(ev, ui) {
@@ -121,7 +121,4 @@ $(document).ready(function() {
   }
 });
 
-function dropHandler() {
-	
-}
 
