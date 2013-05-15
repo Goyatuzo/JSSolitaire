@@ -38,8 +38,8 @@ Card.prototype.isOpposingColors = function( other )
  */
 Card.prototype.isDescending = function( other )
 {
-	var oneRank = this.obj.data().rank;
-	var twoRank = other.obj.data().rank;
+	var oneRank = other.obj.data().rank;
+	var twoRank = this.obj.data().rank;
 
 	for (var i = 0; i < ranks.length - 1; i++) {
 		if ((oneRank === ranks[i]) && (twoRank === ranks[i+1]))
@@ -91,6 +91,8 @@ function init()
 		theDeck[ idxOne ] = theDeck[ idxTwo ];
 		theDeck[ idxTwo ] = temp;		
 	}
+
+
 }
 
 $(document).ready(function() {
@@ -101,7 +103,6 @@ $(document).ready(function() {
   	}).droppable({
 		accept: '.sample-card-design',
     	drop: dropHandler,
-
     	//		function(ev, ui) {
        	//	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
     	//},
@@ -117,4 +118,3 @@ $(document).ready(function() {
 function dropHandler(ev, ui) {
 	$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
 }
-
