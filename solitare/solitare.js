@@ -38,13 +38,15 @@ Card.prototype.isOpposingColors = function( other )
  */
 Card.prototype.isDescending = function( other )
 {
-	var oneRank = this.obj.data().rank;
-	var twoRank = other.obj.data().rank;
+	var oneRank = other.obj.data().rank;
+	var twoRank = this.obj.data().rank;
 
 	for (var i = 0; i < ranks.length - 1; i++) {
-		if ((oneRank === ranks[i]) && (twoRank === ranks[i+1])
+		if ( (oneRank === ranks[i]) && (twoRank === ranks[i+1]) )
 			return true;
 	}
+
+	return false;
 }
 
 /**
