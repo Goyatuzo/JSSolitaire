@@ -3,11 +3,7 @@ function Card( rank, suit )
 {
 	this.rank = rank;
 	this.suit = suit;
-<<<<<<< HEAD
 	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + suit + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + rank + '</div> <div class="' + suit + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
-=======
-	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + this.suit + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + this.rank + '</div> <div class="' + this.suit + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
->>>>>>> 765f6f0d26381603f9fbac052118a68fee3024f9
 }
 
 var theDeck;
