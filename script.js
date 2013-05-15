@@ -18,12 +18,22 @@ $(document).ready(function(){
 		} 
 	});*/
 	
+	$('.stackContainer').droppable({
+		accept: '.sample-card-design',
+		drop: function(ev, ui) {
+       		$(ui.draggable).detach().appendTo(this);
+   		}
+	});
+	
 	$('.sample-card-design').droppable({
+		accept: '.sample-card-design',
     	drop: function(ev, ui) {
-       		$(ui.draggable).detach().css({top: 20,left: 0}).appendTo(this);
+       		$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
     	},
+    	greedy: true,
     	out: function(ev, ui) {
-	    	$(ui.draggable).detach(this);
+	    	//$(ui.draggable).clone().appendTo('#gameboard');
+	    	//$(ui.draggable).clone().appendTo('#gameboard').draggable();
 		}
 	});
     

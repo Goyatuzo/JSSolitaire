@@ -6,7 +6,12 @@ FUNCTIONALITY:
 	- Then implement restrict stacking accordingly.
 - Get cards from deck of cards.
 - Be able to move multiple cards ie 10, 9, 8 ,7 etc when stacked.
+- Define "card holder" areas
+- Move selected card to top (using z-index)
 
 GAME RULES:
 - Create the "win" state
 - Add timer
+
+ISSUES:
+- Fix "remove from stack" functionality
