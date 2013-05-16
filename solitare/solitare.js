@@ -161,9 +161,10 @@ $(document).ready(function() {
   		var id = '#card' + (j+1);
   		console.log("index: ",index," id: ",id);
  		var position = $(id).position();
+ 		theDeck[index].obj.css("z-index", i+2);
   		theDeck[index].obj.animate({
-		top: position.top - $('#deck').position().top +30*i,
-		left: position.left
+			top: position.top - $('#deck').position().top +30*i,
+			left: position.left,
 	}, 150*i + 500, (function(idx, i_val, j_val) {
 
 		//This is necessary because the values of 'num' and 'id' are not stored
