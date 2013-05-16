@@ -113,23 +113,22 @@ $(document).ready(function() {
 	for ( var i=0; i<theDeck.length; i++ ) {
 	//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
 
-	var searchId = theDeck[ i ].obj.data().rank + theDeck[ i ].obj.data().suit;
-	var currIdx = theDeck[ i ].obj.data().index;
-
-
 	console.log( "ID: " + searchId );
 	// Set up eventHandlers.
 	$( theDeck[ i ].obj ).on(
 	{
 		mousedown: function() {
-			console.log( searchId );
+			var searchId = $( this ).data().rank + $( this ).data().suit;
+
 			var containerDiv = document.getElementById( searchId );
 			containerDiv.style.zIndex = "150";
 		},
 
 		mouseup: function() {
+			var searchId = $( this ).data().rank + $( this ).data().suit;
+
 			var containerDiv = document.getElementById( searchId );
-			containerDiv.style.zIndex = currIdx;
+			containerDiv.style.zIndex = $( this ).data().index;
 		}
 	});
 
