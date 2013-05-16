@@ -113,11 +113,6 @@ $(document).ready(function() {
 	for ( var i=0; i<theDeck.length; i++ ) {
 	//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
 
-	var searchId = theDeck[ i ].obj.data().rank + theDeck[ i ].obj.data().suit;
-	var currIdx = theDeck[ i ].obj.data().index;
-
-
-	console.log( "ID: " + searchId );
 	// Set up eventHandlers.
 	$( theDeck[ i ].obj ).on(
 	{
@@ -130,9 +125,9 @@ $(document).ready(function() {
 
 		mouseup: function() {
 			var searchId = $( this ).data().rank + $( this ).data().suit;
-			
+
 			var containerDiv = document.getElementById( searchId );
-			containerDiv.style.zIndex = currIdx;
+			containerDiv.style.zIndex = $( this ).data().index;
 		}
 	});
 
@@ -164,9 +159,10 @@ $(document).ready(function() {
   		var id = '#card' + (j+1);
   		console.log("index: ",index," id: ",id);
  		var position = $(id).position();
+ 		theDeck[index].obj.css("z-index", i+2);
   		theDeck[index].obj.animate({
-		top: position.top - $('#deck').position().top +30*i,
-		left: position.left
+			top: position.top - $('#deck').position().top +30*i,
+			left: position.left,
 	}, 150*i + 500, (function(idx, i_val, j_val) {
 
 		//This is necessary because the values of 'num' and 'id' are not stored
