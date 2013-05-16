@@ -124,12 +124,15 @@ $(document).ready(function() {
 		},
 
 		mouseup: function() {
+			console.log($(this).css("z-index"));
 			var searchId = $( this ).data().rank + $( this ).data().suit;
 
 			var containerDiv = document.getElementById( searchId );
 			containerDiv.style.zIndex = $( this ).data().index;
+			console.log($(this).css("z-index"));
 		}
 	});
+
 
 	// $( theDeck[ i ].obj ).mouseleave( function() {
 	// 	document.getElementById( theDeck[ i ].obj ).style.zIndex = theDeck[ i ].obj.data().index;
