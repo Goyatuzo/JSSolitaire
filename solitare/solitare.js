@@ -115,15 +115,19 @@ $(document).ready(function() {
 
 	var searchId = theDeck[ i ].obj.data().suit + theDeck[ i ].obj.data().rank;
 	var currIdx = theDeck[ i ].obj.data().index;
+
+
+	console.log( "ID: " + searchId );
 	// Set up eventHandlers.
 	$( theDeck[ i ].obj ).on(
 	{
-		mouseover: function() {
+		mousedown: function() {
+			console.log( searchId );
 			var containerDiv = document.getElementById( searchId );
 			containerDiv.style.zIndex = "150";
 		},
 
-		mouseleave: function() {
+		mouseup: function() {
 			var containerDiv = document.getElementById( searchId );
 			containerDiv.style.zIndex = currIdx;
 
@@ -173,14 +177,13 @@ $(document).ready(function() {
     })(i));
   }*/
 
-});
 
-/*$(document).ready(function() {
-
+  $('#startButton').click(function() {
+ 		console.log("wat");
   for (var i=0; i<7; i++) {
   	for (var j=i; j<7; j++) {
   		var index = 51 - ((-0.5)*(i-15)*i + (j-i));
-  		//console.log(index);
+  		console.log(index);
   		var id = '#card' + (j+1);
   		console.log(id);
  		var position = $(id).position();
@@ -201,7 +204,12 @@ $(document).ready(function() {
     })(index, i, j));
   	}
   }
-});*/
+  });
+
+
+});
+
+
 
 function dropHandler(ev, ui) {
 	//$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);

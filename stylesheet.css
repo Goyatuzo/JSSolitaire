@@ -124,14 +124,14 @@ ul.nav li a:hover, ul.nav li a:active {
 	#E3AE57
 	z-index: 10;
 
-	-webkit-transform-style: preserve-3d;
+	/*-webkit-transform-style: preserve-3d;
   	-webkit-transition: all 0.5s linear;
   	-moz-transform-style: preserve-3d;
   	-moz-transition: all 0.5s linear;
   	-o-transform-style: preserve-3d;
   	-o-transition: all 0.5s linear;
   	transform-style: preserve-3d;
-  	transition: all 0.5s linear;
+  	transition: all 0.5s linear;*/
 }
 
 .cardbackground {
@@ -318,4 +318,12 @@ ul.nav li a:hover, ul.nav li a:active {
 	position: absolute;
 	bottom: 200px;
 	left: 30px;
+}
+
+#startButton {
+	background-color: purple;
+	color: white;
+	width: 100px;
+	height: 100px;
+	z-index: 100;
 }
