@@ -95,7 +95,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	box-shadow: 0px 0px 10px 0px #eee;
 }
 
-.cardContainer {
+/*.cardContainer {
 	position: relative;
   	z-index: 20
   	-webkit-perspective: 1000px;
@@ -109,7 +109,7 @@ ul.nav li a:hover, ul.nav li a:active {
   	-moz-transform: rotateX(-180deg);
   	-o-transform: rotateX(180deg);
   	transform: rotateX(-180deg);
-}
+}*/
 
 .sample-card-design {
 	background-color: #FFFFF;
@@ -148,7 +148,7 @@ ul.nav li a:hover, ul.nav li a:active {
 	box-shadow: 0px 0px 10px 0px #eee;
 }
 
-.cardbackground.back {
+/*.cardbackground.back {
 	display: block;
   	-webkit-transform: rotateX(-180deg);
   	-webkit-box-sizing: border-box;
@@ -166,7 +166,7 @@ ul.nav li a:hover, ul.nav li a:active {
   	-moz-backface-visibility: hidden;
   	-o-backface-visibility: hidden;
   	backface-visibility: hidden;
-}
+}*/
 
 .cardIdentifier {
 	position: relative;
