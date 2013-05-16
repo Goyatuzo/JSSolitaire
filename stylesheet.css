@@ -175,18 +175,31 @@ ul.nav li a:hover, ul.nav li a:active {
 	font-size: 400%;	
 }
 
-.suit {
-	top: 8.3333%;
-	left: 17.5%;
+.topSuit {
+	top: 3%;
+	left: 3%;
+	width:17.5%;
+    height:11.6667%;
+    position: absolute;
+}
+
+.bottomSuit {
+	bottom:3%;
+	right:5%;
+	width:17.5%;
+    height:11.6667%;
+    position: absolute;
 }
 
 .diamond {
-	width:17.5%;
-    height:11.6667%;
+	width:100%;
+    height:100%;
     margin: auto;
+    
+    top: 70%;
+
    	border: 1px solid #ddd;
     background-color:#DC3D24;
-    position: absolute;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
