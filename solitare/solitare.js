@@ -11,7 +11,7 @@ ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
  */
 function Card( r, s )
 {
-	this.obj = $('<div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' )
+	this.obj = $('<div class="cardContainer"><div class="sample-card-design" id="kd"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' )
 	this.obj.data({
 		rank: r,
 		suit: s,
