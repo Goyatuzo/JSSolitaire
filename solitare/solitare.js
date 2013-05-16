@@ -107,7 +107,9 @@ function init()
 $(document).ready(function() {
 	init();
   for ( var i=0; i<theDeck.length; i++ ) {
-	  theDeck[ i ].obj.appendTo('#gameboard').draggable( {
+	  //console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
+
+	  theDeck[ i ].obj.appendTo('#deck').draggable( {
       containment: '#gameboard',
       revert: 'invalid'
   	}).droppable({
@@ -122,6 +124,30 @@ $(document).ready(function() {
 		}
 	});
   }
+
+  for (var i=51; i>44; i--) {
+  	var num = 51 - i + 1;
+  	var id = '#card' + num;
+ 	var position = $(id).position();
+	//console.log("i: ", i, " num: ", num);
+	theDeck[i].obj.animate({
+		top: position.top - $('#deck').position().top,
+		left: position.left
+	}, 150*num + 500, (function(count) {
+
+		/**This is necessary because the values of 'num' and 'id' are not stored
+		  *to be used with these function calls. By the time the animations would
+		  *finish, 'i' would be at the last index, so all values of 'id' and 'num'
+		  *would be the same.
+		  */
+        return function() {
+            var number = 51 - count + 1;
+            var tag = '#card' + number;
+            theDeck[count].obj.css({position: 'absolute', top: 0,left: 0}).appendTo(tag);
+        };
+    })(i));
+}
+  
 });
 
 function dropHandler(ev, ui) {
@@ -136,3 +162,5 @@ function dropHandler(ev, ui) {
 /*function flip(card) {
 
 }*/
+
+

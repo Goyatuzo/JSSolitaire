@@ -257,12 +257,18 @@ ul.nav li a:hover, ul.nav li a:active {
 }
 
 .stackArea {
-	margin: 0 auto;
+	margin: auto;
 
-	margin-top: 5%;
+	top: 5%;
 
 	height: 150px;
 	width: 100px;
 
 	position: relative;
+}
+
+#deck {
+	position: absolute;
+	bottom: 200px;
+	left: 30px;
 }
