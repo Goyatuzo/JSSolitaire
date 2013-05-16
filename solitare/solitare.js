@@ -137,7 +137,7 @@ $(document).ready(function() {
   		theDeck[index].obj.animate({
 		top: position.top - $('#deck').position().top +30*i,
 		left: position.left
-	}, 700, (function(idx, i_val, j_val) {
+	}, 150*i + 500, (function(idx, i_val, j_val) {
 
 		//This is necessary because the values of 'num' and 'id' are not stored
 		//to be used with these function calls. By the time the animations would
