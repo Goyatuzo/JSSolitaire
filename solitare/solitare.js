@@ -11,7 +11,7 @@ ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
  */
 function Card( r, s )
 {
-	this.obj = $('<div class="cardContainer"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
+	this.obj = $('<div class="cardContainer" id="' + s + r + '"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
 	//this.obj = $('<div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div>' );
 	this.obj.data({
 		rank: r,
@@ -113,13 +113,21 @@ $(document).ready(function() {
 	for ( var i=0; i<theDeck.length; i++ ) {
 	//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
 
+	var searchId = theDeck[ i ].obj.data().suit + theDeck[ i ].obj.data().rank;
+	var currIdx = theDeck[ i ].obj.data().index;
 	// Set up eventHandlers.
 	$( theDeck[ i ].obj ).on(
 	{
-		click:
-			document.getElementById( theDeck[ i ] ).style.zIndex = "150";
-		mouseleave:
+		mouseover: function() {
+			var containerDiv = document.getElementById( searchId );
+			containerDiv.style.zIndex = "150";
+		},
 
+		mouseleave: function() {
+			var containerDiv = document.getElementById( searchId );
+			containerDiv.style.zIndex = currIdx;
+
+		}
 	});
 
 	// $( theDeck[ i ].obj ).mouseleave( function() {
