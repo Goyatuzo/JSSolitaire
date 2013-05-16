@@ -113,7 +113,6 @@ $(document).ready(function() {
 	for ( var i=0; i<theDeck.length; i++ ) {
 	//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
 
-	
 	// Set up eventHandlers.
 	$( theDeck[ i ].obj ).on(
 	{
