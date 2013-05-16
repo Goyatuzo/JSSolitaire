@@ -12,7 +12,8 @@ ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 function Card( r, s )
 {
 	//this.obj = $('<div class="cardContainer" id="' + s + r + '"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
-	this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+	this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="suit"> <div class="' + s + '"></div> </div><div class="cardIdentifier">' + r + '</div> <div class="suit"> <div class="' + s + '"></div> </div> </div> </div>' );
+	//"style="top:8.3333%;left:17.5%"
 	this.obj.data({
 		rank: r,
 		suit: s,
@@ -88,8 +89,8 @@ function init()
 	for( var i = 0; i < ranks.length; i++ )
 		theDeck[ 39 + i ] = new Card( ranks[i], "diamond" );
 
-	for( var i = 0; i < 6; i++ )
-		cards[ i ] = new Array( 14 );
+	for( var i = 0; i < 20; i++ )
+		cards[ i ] = new Array( 7 );
 
 	/**
 	 * Randomize the deck by essentially swapping the deck N rank
@@ -102,32 +103,28 @@ $(document).ready(function() {
 	init();
 
 	for ( var i=0; i<theDeck.length; i++ ) {
-	//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
+		//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
 
-	// Set up eventHandlers.
-	$( theDeck[ i ].obj ).on(
-	{
-		mousedown: function() {
-			var searchId = $( this ).data().rank + $( this ).data().suit;
+		// Set up eventHandlers.
+		$( theDeck[ i ].obj ).on(
+		{	
+			mousedown: function() {
+				var searchId = $( this ).data().rank + $( this ).data().suit;
 
-			var containerDiv = document.getElementById( searchId );
-			containerDiv.style.zIndex = "150";
-		},
+				var containerDiv = document.getElementById( searchId );
+				containerDiv.style.zIndex = "150";
+			},
 
-		mouseup: function() {
-			console.log($(this).css("z-index"));
-			var searchId = $( this ).data().rank + $( this ).data().suit;
+			mouseup: function() {
+				console.log($(this).css("z-index"));
+				var searchId = $( this ).data().rank + $( this ).data().suit;
 
-			var containerDiv = document.getElementById( searchId );
-			containerDiv.style.zIndex = $( this ).data().index;
-			console.log($(this).css("z-index"));
-		}
-	});
+				var containerDiv = document.getElementById( searchId );
+				containerDiv.style.zIndex = $( this ).data().index;
+				console.log($(this).css("z-index"));
+			}
+		});
 
-
-	// $( theDeck[ i ].obj ).mouseleave( function() {
-	// 	document.getElementById( theDeck[ i ].obj ).style.zIndex = theDeck[ i ].obj.data().index;
-	// });
 
 		theDeck[ i ].obj.appendTo('#deck').draggable( {
 		containment: '#gameboard',
@@ -154,10 +151,12 @@ $(document).ready(function() {
   		console.log("index: ",index," id: ",id);
  		var position = $(id).position();
  		theDeck[index].obj.css("z-index", i+2);
-  		theDeck[index].obj.animate({
+ 		cards[i][j] = theDeck[index];
+ 		theDeck[index] = null;
+  		cards[i][j].obj.animate({
 			top: position.top - $('#deck').position().top +30*i,
 			left: position.left,
-	}, 150*i + 500, (function(idx, i_val, j_val) {
+	}, 150*i + 500, (function(i_val, j_val) {
 
 		//This is necessary because the values of 'num' and 'id' are not stored
 		//to be used with these function calls. By the time the animations would
@@ -166,9 +165,9 @@ $(document).ready(function() {
 		  
         return function() {
             var tag = '#card' + (j_val+1);
-            theDeck[idx].obj.css({position: 'absolute', top: 30*i_val,left: 0}).appendTo(tag);
+            cards[i_val][j_val].obj.css({position: 'absolute', top: 30*i_val,left: 0}).appendTo(tag);
         };
-    })(index, i, j));
+    })(i, j));
   	}
   }
   });

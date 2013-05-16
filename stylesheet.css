@@ -175,9 +175,15 @@ ul.nav li a:hover, ul.nav li a:active {
 	font-size: 400%;	
 }
 
+.suit {
+	top: 8.3333%;
+	left: 17.5%;
+}
+
 .diamond {
 	width:17.5%;
     height:11.6667%;
+    margin: auto;
    	border: 1px solid #ddd;
     background-color:#DC3D24;
     position: absolute;
@@ -198,6 +204,7 @@ ul.nav li a:hover, ul.nav li a:active {
 
 .heart {
  position: absolute;
+ margin: auto;
  width: 25%;
  height: 15%;
 }
@@ -283,6 +290,52 @@ ul.nav li a:hover, ul.nav li a:active {
 	border-radius: 10px;
 }
 
+.spade {
+ position: absolute;
+ width: 25%;
+ height: 15%;
+ -webkit-transform: rotateZ(180deg);
+ -moz-transform: rotateZ(180deg);
+ -ms-transform: rotateZ(180deg);
+ -o-transform: rotateZ(180deg);
+ transform: rotateZ(180deg);
+}
+
+.spade:before, .spade:after {
+ position: absolute;
+ content: "";
+ left: 50%;
+ top: 0;
+ width: 50%;
+ height: 88.8888%;
+ background-color: #232B2B;
+ -moz-border-radius: 25px 25px 0 0;
+ border-radius: 25px 25px 0 0;
+ -webkit-transform: rotate(-45deg);
+ -moz-transform: rotate(-45deg);
+ -ms-transform: rotate(-45deg);
+ -o-transform: rotate(-45deg);
+ transform: rotate(-45deg);
+ -webkit-transform-origin: 0 100%;
+ -moz-transform-origin: 0 100%;
+ -ms-transform-origin: 0 100%;
+ -o-transform-origin: 0 100%;
+ transform-origin: 0 100%;
+}
+
+.spade:after {
+ left: 0;
+ -webkit-transform: rotate(45deg);
+ -moz-transform: rotate(45deg);
+ -ms-transform: rotate(45deg);
+ -o-transform: rotate(45deg);
+ transform: rotate(45deg);
+ -webkit-transform-origin: 100% 100%;
+ -moz-transform-origin: 100% 100%;
+ -ms-transform-origin: 100% 100%;
+ -o-transform-origin: 100% 100%;
+ transform-origin :100% 100%;
+}
 
 #sevenstacks {
 	width: 100%;
