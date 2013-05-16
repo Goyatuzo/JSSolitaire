@@ -12,7 +12,24 @@ ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 function Card( r, s )
 {
 	//this.obj = $('<div class="cardContainer" id="' + s + r + '"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
-	this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+	
+	switch(s) {
+		case "heart":
+			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+			break;
+		case "spade":
+			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+			break;
+		case "club":
+			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+			break;
+		case "diamond":
+			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+			break;
+		default:
+			break;
+	}
+	
 	this.obj.data({
 		rank: r,
 		suit: s,
@@ -34,7 +51,7 @@ function isOpposingColors( topCard, bottomCard )
 		if( topSuit == "spade" || topSuit == "club" )
 			return ( bottomSuit == "heart" || bottomSuit == "diamond" );
 		// If the first suit is "red", return whether or not the other is "black"
-		else if( topSuit == "heart" || topSuit == "diamon" )
+		else if( topSuit == "heart" || topSuit == "diamond" )
 			return ( bottomSuit == "spade" || bottomSuit == "club" );
 		// If anything else is happening, oh no.  Problem.
 		else
