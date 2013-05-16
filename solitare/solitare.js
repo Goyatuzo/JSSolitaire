@@ -11,8 +11,8 @@ ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
  */
 function Card( r, s )
 {
-	this.obj = $('<div class="cardContainer" id="' + s + r + '"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
-	//this.obj = $('<div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div>' );
+	//this.obj = $('<div class="cardContainer" id="' + s + r + '"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
+	this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
 	this.obj.data({
 		rank: r,
 		suit: s,
@@ -113,7 +113,7 @@ $(document).ready(function() {
 	for ( var i=0; i<theDeck.length; i++ ) {
 	//console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
 
-	var searchId = theDeck[ i ].obj.data().suit + theDeck[ i ].obj.data().rank;
+	var searchId = theDeck[ i ].obj.data().rank + theDeck[ i ].obj.data().suit;
 	var currIdx = theDeck[ i ].obj.data().index;
 
 
@@ -152,29 +152,6 @@ $(document).ready(function() {
 			}
 		});
 	}	
-
-  /*for (var i=51; i>44; i--) {
-  	var num = 51 - i + 1;
-  	var id = '#card' + num;
- 	var position = $(id).position();
-	//console.log("i: ", i, " num: ", num);
-	theDeck[i].obj.animate({
-		top: position.top - $('#deck').position().top,
-		left: position.left
-	}, 150*num + 500, (function(count) {
-
-		/**This is necessary because the values of 'num' and 'id' are not stored
-		  *to be used with these function calls. By the time the animations would
-		  *finish, 'i' would be at the last index, so all values of 'id' and 'num'
-		  *would be the same.
-		  
-        return function() {
-            var number = 51 - count + 1;
-            var tag = '#card' + number;
-            theDeck[count].obj.css({position: 'absolute', top: 0,left: 0}).appendTo(tag);
-        };
-    })(i));
-  }*/
 
   $('#startButton').click(function() {
  		console.log("wat");
