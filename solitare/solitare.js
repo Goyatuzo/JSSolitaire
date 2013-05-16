@@ -11,8 +11,8 @@ ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
  */
 function Card( r, s )
 {
-	this.obj = $('<div class="cardContainer"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
-	//this.obj = $('<div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div>' );
+	//this.obj = $('<div class="cardContainer"><div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div><div class="cardBack"></div> </div></div>' );
+	this.obj = $('<div class="sample-card-design"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
 	this.obj.data({
 		rank: r,
 		suit: s,
@@ -148,15 +148,12 @@ $(document).ready(function() {
         };
     })(i));
   }*/
-  
-});
-
-/*$(document).ready(function() {
-
+  $('#startButton').click(function() {
+ 		console.log("wat");
   for (var i=0; i<7; i++) {
   	for (var j=i; j<7; j++) {
   		var index = 51 - ((-0.5)*(i-15)*i + (j-i));
-  		//console.log(index);
+  		console.log(index);
   		var id = '#card' + (j+1);
   		console.log(id);
  		var position = $(id).position();
@@ -177,7 +174,12 @@ $(document).ready(function() {
     })(index, i, j));
   	}
   }
-});*/
+  });
+
+
+});
+
+
 
 function dropHandler(ev, ui) {
 	//$(ui.draggable).detach().css({top: 30,left: 0}).appendTo(this);
