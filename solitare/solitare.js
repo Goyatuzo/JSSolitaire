@@ -108,7 +108,7 @@ function init()
 $(document).ready(function() {
 	init();
   for ( var i=0; i<theDeck.length; i++ ) {
-	  //console.log(theDeck[i].obj.data("rank"), theDeck[i].obj.data("suit"));
+	  console.log("index: ", i, " r: ", theDeck[i].obj.data("rank"), " s: ",theDeck[i].obj.data("suit"));
 
 	  theDeck[ i ].obj.appendTo('#deck').draggable( {
       containment: '#gameboard',
@@ -126,38 +126,15 @@ $(document).ready(function() {
 	});
   }
 
-  /*for (var i=51; i>44; i--) {
-  	var num = 51 - i + 1;
-  	var id = '#card' + num;
- 	var position = $(id).position();
-	//console.log("i: ", i, " num: ", num);
-	theDeck[i].obj.animate({
-		top: position.top - $('#deck').position().top,
-		left: position.left
-	}, 150*num + 500, (function(count) {
-
-		/**This is necessary because the values of 'num' and 'id' are not stored
-		  *to be used with these function calls. By the time the animations would
-		  *finish, 'i' would be at the last index, so all values of 'id' and 'num'
-		  *would be the same.
-		  
-        return function() {
-            var number = 51 - count + 1;
-            var tag = '#card' + number;
-            theDeck[count].obj.css({position: 'absolute', top: 0,left: 0}).appendTo(tag);
-        };
-    })(i));
-  }*/
   $('#startButton').click(function() {
  		console.log("wat");
   for (var i=0; i<7; i++) {
   	for (var j=i; j<7; j++) {
   		var index = 51 - ((-0.5)*(i-15)*i + (j-i));
-  		console.log(index);
   		var id = '#card' + (j+1);
-  		console.log(id);
+  		console.log("index: ",index," id: ",id);
  		var position = $(id).position();
-  		theDeck[j].obj.animate({
+  		theDeck[index].obj.animate({
 		top: position.top - $('#deck').position().top +30*i,
 		left: position.left
 	}, 700, (function(idx, i_val, j_val) {
@@ -169,7 +146,7 @@ $(document).ready(function() {
 		  
         return function() {
             var tag = '#card' + (j_val+1);
-            theDeck[idx].obj.css({top: 30*i_val,left: 0}).appendTo(tag);
+            theDeck[idx].obj.css({position: 'absolute', top: 30*i_val,left: 0}).appendTo(tag);
         };
     })(index, i, j));
   	}
