@@ -42,7 +42,7 @@ ul.nav li a:hover, ul.nav li a:active {
 }
 
 #titlebar {
-	height: 200px;
+	height: 150px;
 	width: auto;
 }
 
@@ -81,7 +81,7 @@ ul.nav li a:hover, ul.nav li a:active {
 
 #gameboard {
 	width: 60%;
-	height: 60%;
+	height: 70%;
 	margin: auto;	
 	position: absolute;
 	margin-left: 20%;
@@ -286,7 +286,7 @@ ul.nav li a:hover, ul.nav li a:active {
 
 #sevenstacks {
 	width: 100%;
-	height: 50%;
+	height: 40%;
 }
 
 .stackContainer {
