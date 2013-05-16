@@ -2,7 +2,7 @@
  * The deck of cards, will hold 52 cards.
  */
 var theDeck;
-var numCards = 0;
+var cards = new Array( 7 );
 
 ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 
@@ -18,20 +18,7 @@ function Card( r, s )
 		suit: s,
 		index: 0
 	});
-
-	this.id = numCards++;
 	//console.log(this.obj.data("rank"));
-}
-
-function cardClick( e )
-{
-	// Obtain the card's properties.
-	var target = ( e.target ) ? e.target : e.srcElement;
-
-	// Change the index. 
-	target.obj.data().index = 15;
-
-
 }
 
 /**
@@ -70,6 +57,17 @@ function isDescending(topCard, bottomCard)
 	return false;
 }
 
+function fisherYates( array ) {
+	var i = array.length, j, temp;
+	if ( i === 0 ) return false;
+	while ( --i ) {
+		j = Math.floor( Math.random() * ( i + 1 ) );
+		temp = array[i];
+		array[i] = array[j]; 
+		array[j] = temp;
+	}
+}
+
 function init()
 {
 	theDeck = new Array( 52 );
@@ -90,21 +88,14 @@ function init()
 	for( var i = 0; i < ranks.length; i++ )
 		theDeck[ 39 + i ] = new Card( ranks[i], "diamond" );
 
+	for( var i = 0; i < 6; i++ )
+		cards[ i ] = new Array( 14 );
+
 	/**
 	 * Randomize the deck by essentially swapping the deck N rank
 	 * of times.  Figured it was more efficient.
 	 */
-	for( var i = 0; i < 52; i++ )
-	{
-		// Because javascript has no pass by reference.
-		var idxOne = Math.floor( Math.random() * 52 );
-		var idxTwo = Math.floor( Math.random() * 52 );
-
-		var temp = theDeck[ idxOne ];
-
-		theDeck[ idxOne ] = theDeck[ idxTwo ];
-		theDeck[ idxTwo ] = temp;		
-	}
+	fisherYates( theDeck )
 }
 
 $(document).ready(function() {
