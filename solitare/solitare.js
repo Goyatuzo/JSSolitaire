@@ -18,13 +18,13 @@ function Card( r, s )
 			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:5%"></div> </div> </div>' );
 			break;
 		case "spade":
-			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:2%;left:5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:4%"></div> </div> </div>' );
 			break;
 		case "club":
 			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:6%;left:10%">T</div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:7.5%;right:10%">T</div> </div> </div>' );
 			break;
 		case "diamond":
-			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3.3333%;right:2%"></div> </div> </div>' );
+			this.obj = $('<div class="sample-card-design" id="'+r+s+'"> <div class="cardbackground"> <div class="' + s + '"style="top:8.3333%;left:17.5%"></div> <div class="cardIdentifier">' + r + '</div> <div class="' + s + '" style="bottom:3%;right:0%"></div> </div> </div>' );
 			break;
 		default:
 			break;
