@@ -130,7 +130,6 @@ $(document).ready(function() {
 		mouseup: function() {
 			var containerDiv = document.getElementById( searchId );
 			containerDiv.style.zIndex = currIdx;
-
 		}
 	});
 
@@ -177,17 +176,15 @@ $(document).ready(function() {
     })(i));
   }*/
 
-
   $('#startButton').click(function() {
  		console.log("wat");
   for (var i=0; i<7; i++) {
   	for (var j=i; j<7; j++) {
   		var index = 51 - ((-0.5)*(i-15)*i + (j-i));
-  		console.log(index);
   		var id = '#card' + (j+1);
-  		console.log(id);
+  		console.log("index: ",index," id: ",id);
  		var position = $(id).position();
-  		theDeck[j].obj.animate({
+  		theDeck[index].obj.animate({
 		top: position.top - $('#deck').position().top +30*i,
 		left: position.left
 	}, 700, (function(idx, i_val, j_val) {
@@ -199,7 +196,7 @@ $(document).ready(function() {
 		  
         return function() {
             var tag = '#card' + (j_val+1);
-            theDeck[idx].obj.css({top: 30*i_val,left: 0}).appendTo(tag);
+            theDeck[idx].obj.css({position: 'absolute', top: 30*i_val,left: 0}).appendTo(tag);
         };
     })(index, i, j));
   	}
