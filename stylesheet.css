@@ -384,12 +384,13 @@ ul.nav li a:hover, ul.nav li a:active {
 }
 
 .final {
-	background-color: white;
-
+	background-color: green;
 	display: inline-block;
-
 	margin: auto;
-
 	height: 150px;
 	width: 100px;
+	-webkit-box-shadow: inset 0px 0px 10px 0px #eee;
+	-moz-box-shadow: inset 0px 0px 10px 0px #eee;
+	box-shadow: inset 0px 0px 10px 0px #eee;
+	border-radius: 15px;
 }
