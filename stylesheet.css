@@ -373,3 +373,23 @@ ul.nav li a:hover, ul.nav li a:active {
 	height: 100px;
 	z-index: 100;
 }
+
+#finalStacks {
+	float: right;
+
+	position: absolute;
+
+	bottom: 2%;
+	right: 1%;
+}
+
+.final {
+	background-color: white;
+
+	display: inline-block;
+
+	margin: auto;
+
+	height: 150px;
+	width: 100px;
+}
